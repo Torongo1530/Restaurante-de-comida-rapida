@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Food Station - Comida Rápida Deliciosa</title>
+    <link rel="icon" type="image/png" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-7OJSMMu5zEtch8gkkpuiwxCoJ7s8xW.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626', // red-600
+                        secondary: '#1f2937', // gray-800
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-7OJSMMu5zEtch8gkkpuiwxCoJ7s8xW.png" alt="Metro Food Station Logo" class="h-10 w-10">
+                    <h1 class="text-2xl font-bold text-primary">Metro Food Station</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#menu" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Menú</a>
+                        <a href="#drinks" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Bebidas</a>
+                        <a href="#about" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Nosotros</a>
+                        <a href="#contact" class="text-secondary hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-16 overflow-hidden">
+         Carousel Background 
+        <div class="absolute inset-0 z-0">
+            <div class="carousel-container relative w-full h-full">
+                <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrusel%201.jpg-3j6FQoZM0aBF2euwe5zYXyNWskZvRS.jpeg" alt="Deliciosos mini tacos" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrusel%202.jpg-RDHQ2TtxZNdBXiiorSjaFvwuz34DpU.jpeg" alt="Taco gourmet con cilantro" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrusel%203.jpg-EoV7u4wZX90Fqn14ep3TXF2gkOFRoI.jpeg" alt="Plátanos maduros caramelizados" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                </div>
+                <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrusel%204.jpg-sgdmkM9xbIlyWTcxH7mA872YqeEel8.jpeg" alt="Nachos cargados con queso" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+                </div>
+            </div>
+        </div>
+        
+         Hero Content 
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-white">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Sabor Auténtico en Cada Bocado
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                    Descubre la mejor comida rápida de la ciudad. Ingredientes frescos, sabores únicos y la comodidad que necesitas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="showDeliveryModal()" class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+                        🚚 Pedir Delivery
+                    </button>
+                    <button onclick="showPickupModal()" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition-colors duration-200">
+                        🏪 Recoger en Tienda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Nuestros Más Pedidos</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Descubre los sabores que han conquistado a nuestros clientes
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Chicken%20Bacon%20Ranch.jpg-bJb3aMT5Z2K8JEOusUHsWVoabs7zSD.jpeg" alt="Chicken Bacon Ranch" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Chicken Bacon Ranch</h3>
+                        <p class="text-gray-600 mb-4">Deliciosos wraps rellenos de pollo jugoso, bacon crujiente y nuestro aderezo ranch especial.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Patacon%20de%20Costillas.jpg-sqNutvCecuwhCqXMloir2yFkvVJx2n.jpeg" alt="Patacon de Costillas" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Patacón de Costillas</h3>
+                        <p class="text-gray-600 mb-4">Nuestro plato estrella: costillas tiernas entre crujientes patacones, con vegetales frescos.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Metro%20Super%20Fries.jpg-SfL9cspCFfoiwQgCFBgCQnUl4dasDQ.jpeg" alt="Metro Super Fries" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Metro Super Fries</h3>
+                        <p class="text-gray-600 mb-4">Papas fritas cargadas con cebolla caramelizada, salsas especiales y cebollín fresco.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Alitas%20BBQ.jpg-ziWpBkHRu1NdmQoLivtrED3pXH3Vyb.jpeg" alt="Alitas BBQ" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Alitas BBQ</h3>
+                        <p class="text-gray-600 mb-4">Alitas jugosas bañadas en nuestra salsa BBQ casera, acompañadas de plátano maduro.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="drinks" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Bebidas Más Vendidas</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Refréscate con nuestras bebidas artesanales más populares
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sangria.jpg-bWB5f1tDFcK538GHrbkjy6ZpFzens7.jpeg" alt="Sangria" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Sangría</h3>
+                        <p class="text-gray-600 mb-4">Refrescante mezcla de vino tinto con frutas frescas y especias naturales.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pi%C3%B1a%20Colada.jpg-xkkfFCHNt0bwtvFkECfJP3TXCxsTnp.jpeg" alt="Piña Colada" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Piña Colada</h3>
+                        <p class="text-gray-600 mb-4">Cremosa mezcla tropical de piña fresca, coco y ron, servida bien fría.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mojito%20Clasico.jpg-tdYXwR5eQmB54ZIqGzZbITMjaemTq9.jpeg" alt="Mojito Clásico" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Mojito Clásico</h3>
+                        <p class="text-gray-600 mb-4">Refrescante cóctel cubano con menta fresca, lima, azúcar y ron blanco.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="aspect-w-16 aspect-h-12">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Margarita%20de%20Fresa%20Frozen.jpg-p5dweBb6qUEnll5Xm876GbxdwoQKYv.jpeg" alt="Margarita de Fresa Frozen" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Margarita de Fresa Frozen</h3>
+                        <p class="text-gray-600 mb-4">Margarita helada con fresas naturales, tequila premium y borde de sal.</p>
+                        <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200 font-semibold">
+                            Ordenar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-6">Nuestra Historia</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Metro Food Station nació de la pasión por crear experiencias gastronómicas únicas. Desde nuestros inicios, nos hemos dedicado a fusionar sabores tradicionales con técnicas modernas de cocina rápida.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Cada plato es preparado con ingredientes frescos y de la más alta calidad. Nuestro equipo de chefs especializados trabaja constantemente para innovar y sorprender a nuestros clientes con nuevos sabores.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">5+</div>
+                            <div class="text-sm text-gray-600">Años de experiencia</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">10k+</div>
+                            <div class="text-sm text-gray-600">Clientes satisfechos</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">50+</div>
+                            <div class="text-sm text-gray-600">Platos únicos</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-secondary mb-6">¿Por qué elegirnos?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Ingredientes Frescos</h4>
+                                <p class="text-gray-600">Seleccionamos cuidadosamente cada ingrediente para garantizar la máxima frescura y calidad.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Entrega Rápida</h4>
+                                <p class="text-gray-600">Nuestro sistema de delivery garantiza que tu comida llegue caliente y en tiempo récord.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0 w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Sabores Únicos</h4>
+                                <p class="text-gray-600">Creamos combinaciones de sabores que no encontrarás en ningún otro lugar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Contáctanos</h2>
+                <p class="text-lg text-gray-600">Estamos aquí para servirte</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">📍</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Ubicación</h3>
+                    <p class="text-gray-600">Av. Principal #123<br>Centro de la Ciudad</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">📞</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Teléfono</h3>
+                    <p class="text-gray-600">+1 (555) 123-4567<br>Lun - Jue: 7PM - 1AM<br>Vie - Dom: 7PM - 2AM</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">✉️</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-secondary mb-2">Email</h3>
+                    <p class="text-gray-600">info@metrofoodstation.com<br>pedidos@metrofoodstation.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-7OJSMMu5zEtch8gkkpuiwxCoJ7s8xW.png" alt="Metro Food Station Logo" class="h-8 w-8">
+                        <h3 class="text-2xl font-bold text-primary">Metro Food Station</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        La mejor comida rápida de la ciudad. Sabores auténticos, ingredientes frescos y el servicio que mereces.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-200">Facebook</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-200">Instagram</a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors duration-200">Twitter</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#menu" class="text-gray-300 hover:text-primary transition-colors duration-200">Menú</a></li>
+                        <li><a href="#drinks" class="text-gray-300 hover:text-primary transition-colors duration-200">Bebidas</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-200">Nosotros</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-200">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Horarios</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Lun - Jue: 7PM - 1AM</li>
+                        <li>Vie - Dom: 7PM - 2AM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 Metro Food Station. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="deliveryModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Delivery a Domicilio</h3>
+            <p class="text-gray-600 mb-4">Ingresa tu dirección para calcular el tiempo de entrega:</p>
+            <input type="text" placeholder="Ingresa tu dirección completa" class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-primary">
+            <div class="flex space-x-4">
+                <button onclick="closeModal('deliveryModal')" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors duration-200">
+                    Cancelar
+                </button>
+                <button class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200">
+                    Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pickupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6">
+            <h3 class="text-2xl font-bold text-secondary mb-4">Recoger en Tienda</h3>
+            <p class="text-gray-600 mb-4">Tu pedido estará listo en aproximadamente 15-20 minutos.</p>
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <h4 class="font-semibold text-secondary mb-2">Nuestra Ubicación:</h4>
+                <p class="text-gray-600">Av. Principal #123<br>Centro de la Ciudad</p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="closeModal('pickupModal')" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition-colors duration-200">
+                    Cancelar
+                </button>
+                <button class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors duration-200">
+                    Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel every 4 seconds
+        setInterval(nextSlide, 4000);
+
+        function showDeliveryModal() {
+            document.getElementById('deliveryModal').classList.remove('hidden');
+        }
+
+        function showPickupModal() {
+            document.getElementById('pickupModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const deliveryModal = document.getElementById('deliveryModal');
+            const pickupModal = document.getElementById('pickupModal');
+            
+            if (event.target === deliveryModal) {
+                closeModal('deliveryModal');
+            }
+            if (event.target === pickupModal) {
+                closeModal('pickupModal');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
